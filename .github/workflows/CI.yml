@@ -30,7 +30,7 @@ jobs:
           cache: "npm"
           cache-dependency-path: '**/package-lock.json'
       - name: Run with npm
-        working-directory: ./src/auth_module
+        working-directory: ./src/auth_service
         run: |
           npm install
           npm run start
