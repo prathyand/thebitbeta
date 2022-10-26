@@ -12,9 +12,9 @@ jobs:
   push_to_registry:
     name: Push Docker image to Docker Hub
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        contexts: [./src/auth_service,./src/frontend]
+#     strategy:
+#       matrix:
+#         contexts: [./src/auth_service,./src/frontend]
     steps:
       - name: Check out the repo
         uses: actions/checkout@v3
@@ -31,11 +31,21 @@ jobs:
         with:
           images: prathyand/thebitbeta
       
-      - name: Build and push Docker image
+      - name: Build and push authmodule
         uses: docker/build-push-action@v3
         with:
-          context: ${{matrix.contexts}}
+          context: ./src/auth_service/
           file: Dockerfile
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
+
+      - name: Build and push frontend
+        uses: docker/build-push-action@v3
+        with:
+          context: ./src/frontend/
+          file: Dockerfile
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+
