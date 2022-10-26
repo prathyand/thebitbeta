@@ -33,4 +33,4 @@ jobs:
         working-directory: ./src/auth_service
         run: |
           npm install
-          npm run start
+          npm run test
