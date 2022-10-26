@@ -49,3 +49,25 @@ jobs:
           tags: prathyand/thebitbeta:frontend_latest
           labels: ${{ steps.meta.outputs.labels }}
 
+      - name: executing remote ssh commands using key file
+        uses: appleboy/ssh-action@master
+        with:
+          # host for jetstream server
+          host: ${{ secrets.AWS_HOST }}
+          # username for jetstream server
+          username: ${{ secrets.AWS_USER }}
+          # jetstream userkey, added to server and github secrets
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: 22
+          script: |
+            cd $HOME
+            rm -rf thebitbeta/
+            git clone https://github.com/prathyand/thebitbeta.git
+            echo "stopping containers"
+            cd thebitbeta/src
+            docker compose -f docker-compose_aws.yml down  
+            echo "Fetching latest docker images"
+            docker compose -f docker-compose_aws.yml pull
+            echo "Deploying the application"
+            docker compose -f docker-compose_aws.yml up -d
+
