@@ -37,7 +37,7 @@ jobs:
           context: ./src/auth_service/
           file: ./src/auth_service/Dockerfile
           push: true
-          tags: prathyand:thebitbeta/auth_module_latest
+          tags: prathyand/thebitbeta:auth_module_latest
           labels: ${{ steps.meta.outputs.labels }}
 
       - name: Build and push frontend
@@ -46,6 +46,6 @@ jobs:
           context: ./src/frontend/
           file: ./src/frontend/Dockerfile
           push: true
-          tags: prathyand:thebitbeta/frontend_latest
+          tags: prathyand/thebitbeta:frontend_latest
           labels: ${{ steps.meta.outputs.labels }}
 
