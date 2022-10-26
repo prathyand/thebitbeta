@@ -37,15 +37,15 @@ jobs:
           context: ./src/auth_service/
           file: ./src/auth_service/Dockerfile
           push: true
-          tags: ${{ steps.meta.outputs.tags }}
+          tags: prathyand:thebitbeta/auth_module_latest
           labels: ${{ steps.meta.outputs.labels }}
 
-#       - name: Build and push frontend
-#         uses: docker/build-push-action@v3
-#         with:
-#           context: ./src/frontend/
-#           file: Dockerfile
-#           push: true
-#           tags: ${{ steps.meta.outputs.tags }}
-#           labels: ${{ steps.meta.outputs.labels }}
+      - name: Build and push frontend
+        uses: docker/build-push-action@v3
+        with:
+          context: ./src/frontend/
+          file: ./src/frontend/Dockerfile
+          push: true
+          tags: prathyand:thebitbeta/frontend_latest
+          labels: ${{ steps.meta.outputs.labels }}
 
