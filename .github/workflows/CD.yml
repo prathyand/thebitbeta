@@ -39,6 +39,24 @@ jobs:
           push: true
           tags: prathyand/thebitbeta:auth_module_latest
           labels: ${{ steps.meta.outputs.labels }}
+  
+      - name: Build and push apigateway
+        uses: docker/build-push-action@v3
+        with:
+          context: ./src/api_gateway/
+          file: ./src/api_gateway/Dockerfile
+          push: true
+          tags: prathyand/thebitbeta:api_gateway_latest
+          labels: ${{ steps.meta.outputs.labels }}
+
+      - name: Build and push dashboard_service
+        uses: docker/build-push-action@v3
+        with:
+          context: ./src/dashboard_service/
+          file: ./src/dashboard_service/Dockerfile
+          push: true
+          tags: prathyand/thebitbeta:dashboard_service_latest
+          labels: ${{ steps.meta.outputs.labels }}
 
       - name: Build and push frontend
         uses: docker/build-push-action@v3
