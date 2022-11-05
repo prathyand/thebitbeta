@@ -81,11 +81,14 @@ jobs:
           port: 22
           script: |
             cd $HOME
-            sudo rm -rf thebitbeta/
-            sudo git clone https://github.com/prathyand/thebitbeta.git
             echo "stopping containers"
             cd thebitbeta/src
-            sudo docker compose -f docker-compose_aws.yml down  
+            sudo docker compose -f docker-compose_aws.yml down
+            cd ..
+            cd ..
+            sudo rm -rf thebitbeta/
+            sudo git clone https://github.com/prathyand/thebitbeta.git
+            cd thebitbeta/src 
             echo "Fetching latest docker images"
             sudo docker compose -f docker-compose_aws.yml pull
             echo "Deploying the application"
