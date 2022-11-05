@@ -63,7 +63,7 @@ services:
     ports:
       - 80:80
     environment:
-      - REACT_APP_GATEWAY1=api_gateway
+      - REACT_APP_GATEWAY1=ec2-18-217-75-44.us-east-2.compute.amazonaws.com
       - REACT_APP_GATEWAY1_PORT=5001
 
     stdin_open: true
