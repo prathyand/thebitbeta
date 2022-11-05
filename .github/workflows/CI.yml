@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: thebitbeta
+name: build
 
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the development branch and master branch
@@ -71,5 +71,5 @@ jobs:
       - name: Build Web-App module
         working-directory: ./src/frontend
         run: |
-          npm ci
+          npm ci --legacy-peer-deps
           CI="" npm run build --if-present
