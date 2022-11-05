@@ -8,7 +8,7 @@ import Form from 'react-bootstrap/Form';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 
-const domainName = "http://" + CONSTANTS.GATEWAY1 + ":" + CONSTANTS.GATEWAY1_PORT;
+const domainName = "http://" + CONSTANTS.REACT_APP_GATEWAY1 + ":" + CONSTANTS.REACT_APP_GATEWAY1_PORT;
 
 const ProfileForm = () => {
   const context = useContext(AuthContext)

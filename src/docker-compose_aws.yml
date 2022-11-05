@@ -63,8 +63,8 @@ services:
     ports:
       - 80:80
     environment:
-      - GATEWAY1=api_gateway
-      - GATEWAY1_PORT=5001
+      - REACT_APP_GATEWAY1=api_gateway
+      - REACT_APP_GATEWAY1_PORT=5001
 
     stdin_open: true
     tty: true

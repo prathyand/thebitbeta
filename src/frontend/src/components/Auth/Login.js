@@ -8,7 +8,7 @@ import { Alert } from "react-bootstrap";
 import { GoogleLogin } from 'react-google-login';
 import constants from '../../constants';
 
-const domainName_gw1 = "http://" + constants.GATEWAY1 + ":" + constants.GATEWAY1_PORT;
+const domainName_gw1 = "http://" + constants.REACT_APP_GATEWAY1 + ":" + constants.REACT_APP_GATEWAY1_PORT;
 const webDomain = "http://" + constants.DOMAIN + ":" + constants.FE_PORT
 const clientId = constants.CLIENT_ID
 

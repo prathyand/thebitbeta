@@ -9,7 +9,7 @@ import { GoogleLogin } from 'react-google-login';
 import constants from '../../constants';
 
 const CONSTANTS = require("../../constants");
-const domainName_gw1 = "http://" + CONSTANTS.GATEWAY1 + ":" + CONSTANTS.GATEWAY1_PORT;
+const domainName_gw1 = "http://" + CONSTANTS.REACT_APP_GATEWAY1 + ":" + CONSTANTS.REACT_APP_GATEWAY1_PORT;
 const webDomain = "http://" + CONSTANTS.DOMAIN + ":" + CONSTANTS.FE_PORT
 const clientId = constants.CLIENT_ID
 
