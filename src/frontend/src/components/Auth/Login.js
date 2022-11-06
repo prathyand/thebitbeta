@@ -67,7 +67,7 @@ class Login extends React.Component{
         this.mailEntered = this.emailUserInp.current.value;
         this.passwordEntered = this.passwordInp.current.value;
         // console.log(this.mailEntered);
-        // console.log(this.passwordEntered);
+        console.log("gateway host:"+constants.REACT_APP_GATEWAY1);
         fetch(
             domainName_gw1+"/login",
             {
