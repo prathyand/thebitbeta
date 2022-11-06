@@ -64,7 +64,7 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           context: ./src/frontend/
-          file: ./src/frontend/Dockerfile
+          file: ./src/frontend/Dockerfile-AWS.dockerfile
           push: true
           tags: prathyand/thebitbeta:frontend_latest
           labels: ${{ steps.meta.outputs.labels }}
