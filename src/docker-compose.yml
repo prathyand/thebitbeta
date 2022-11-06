@@ -59,14 +59,13 @@ services:
     restart: unless-stopped
     build: 
       context: ./frontend
+      args:
+        - REACT_APP_GATEWAY1=localhost
+        - REACT_APP_GATEWAY1_PORT=5001
     depends_on:
       - api_gateway
     ports:
       - 80:80
-    environment:
-      - REACT_APP_GATEWAY1=api_gateway
-      - REACT_APP_GATEWAY1_PORT=5001
-
     stdin_open: true
     tty: true
 
